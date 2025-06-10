@@ -1,35 +1,27 @@
 {
-  "name": "studentdreamfund",
+  "name": "thtkoder.github.io",
   "version": "1.0.0",
-  "description": "first",
-  "keywords": [],
-  "homepage": "https://github.com/ThtKoder/ThtKoder.github.io#readme",
-  "bugs": {
-    "url": "https://github.com/ThtKoder/ThtKoder.github.io/issues"
+  "description": "dependencies: node + jquery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ThtKoder/ThtKoder.github.io.git"
   },
-  "license": "MIT",
-  "author": "sander",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node server.js"
+  "bugs": {
+    "url": "https://github.com/ThtKoder/ThtKoder.github.io/issues"
   },
+  "homepage": "https://github.com/ThtKoder/ThtKoder.github.io#readme",
   "dependencies": {
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "mongodb": "^6.16.0",
-    "mongoose": "^8.14.0",
-    "node": "^22.15.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10"
+    "firebase": "^11.8.1",
+    "firebase-admin": "^13.4.0"
   }
 }

@@ -5,16 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/ref.css">
-    <script src="https://github.com/ThtKoder/ThtKoder.github.io/blob/main/student.js"></script>
+    <script src="/student.js"></script>
+    <script src="/index.js"></script>
     
+
+    <!-- datepicker link + scripts -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
 
+    <script>
+        $( function() {
+          $( "#datepickerA" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+          });
+        } );
+    </script>
+
+    <script>
+        $( function() {
+        $( "#datepickerB" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        } );
+    </script>
+
+<script>
+    $( function() {
+    $( "#datepickerC" ).datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+    } );
+</script>
+
+<script>
+    $( function() {
+    $( "#datepickerD" ).datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+    } );
+</script>
+
+    <!-- dragzone/drag n drop files-->
+
+    <!-- In your <head> or before </body> -->
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" />
+    <div class="dropzone" id="my-dropzone"></div>
+
 </head>
 <body>
-    <img style="width: 100%; height: 100%" src="/assets/Cal25-26.jpg" />
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="/assets/Cal25-26.jpg" style="width: 50%; height: auto;" alt="CIS_25-26_Calendar">
+    </div>
 
     <div data-has-description="false" data-has-error="false" data-has-label="true" data-state="Default" data-value-type="Default" style="width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex"></div>
     <!-- border/margin -->
@@ -44,7 +92,9 @@
         <!-- Criterion C -->
         <criterion>Criterion C: Creating a Solution</criterion>
         <smalldiv></smalldiv>
-        <criterioncontent>"We seek to create a solution that is..."</criterioncontent>
+        <criterioncontent>
+            <input type=text value="We seek to create a solution that is..." style="width:100%; height:100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+        </criterioncontent>
 
         <p>Crit C Date: <input type="text" id="datepickerC"></p>
 
@@ -63,31 +113,11 @@
 
     <button onclick="saveText()">Save Text</button>
     
-    <div i="dropzone" style="width: 100%; height: 200px; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center;">
-        <p id="dropzone-msg">Drag and drop your file here</p>
+    <div class="my-dropzone"></div>
 
     <script>
-        const dropzone = document.getElementById('dropzone');
-        const dropzoneMsg = document.getElementById('dropzone-msg');
-
-        dropzone.addEventListener('dragover', (event) => {
-            event.preventDefault();
-        });
-
-        dropzone.addEventListener('drop', () => {
-            event.preventDefault();
-
-            if( event.dataTransfer.files.length > 0) {
-                const file = event.dataTransfer.files[0];
-                dropzoneMsg.textContent = `File "${file.name}" dropped successfully!`;
-                
-
-                // Here you can add code to handle the file, like uploading it to a server
-            } else {
-                dropzoneMsg.textContent = 'No files dropped.';
-            }
-        });
-
+    // Dropzone has been added as a global variable.
+    const dropzone = new Dropzone("div.my-dropzone", { url: "/file/post" });
     </script>
 
 </body>
